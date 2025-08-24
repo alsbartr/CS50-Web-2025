@@ -1,0 +1,28 @@
+<!-- 個別に利用する Index Html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tasks</title>
+    </head>
+    <body>
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
+-->
+
+<!-- layout.html を利用-->
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+    <h1>Tasks:</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'tasks:index' %}">View Tasks</a>
+{% endblock %}
